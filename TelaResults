@@ -1,0 +1,65 @@
+import javax.swing.*;
+import java.util.Random;
+
+public class TelaResults {
+JFrame ja2;
+JLabel lblMens;
+JTextArea areaUva;
+JButton btnSort;
+JLabel lblSort;
+
+String [] listIdeas = {
+		"Trabalhar",
+		"Jogar Futebol(tentar)",
+		"Soltar pipa",
+		"Dormir",
+		"Comer"
+		
+};
+
+public TelaResults(String nUsuario, int dUsuario) {
+	ja2 = new JFrame("Seu plano de férias");
+	ja2.setSize(450,400);
+	ja2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	ja2.setLayout(null);
+	ja2.setLocationRelativeTo(null);
+	
+	lblMens = new JLabel("Boas Férias" + nUsuario + "Aprovado");
+	lblMens.setBounds(30,20,400,25);
+	ja2.add(lblMens);
+	
+	JLabel lblfixo = new JLabel("Tarefas para fazer: ");
+	lblfixo.setBounds(30,60,300,25);
+	ja2.add(lblfixo);
+	
+	areaUva = new JTextArea();
+	areaUva.setBounds(30,90,370,100);
+	areaUva.setEditable(false);
+	ja2.add(areaUva);
+	
+	for(int i = 0; i < 3; i++) {
+		areaUva.append("-" + listIdeas[i] + "\n");
+	}
+	
+	btnSort = new JButton("Sortear Atividade Extra");
+	btnSort.setBounds(30,210,200,30);
+	ja2.add(btnSort);
+	
+	lblSort = new JLabel("Clique para descobrir algo novo");
+	lblSort.setBounds(30,250,370,25);
+	ja2.add(lblSort);
+	
+	btnSort.addActionListener(e -> {
+		Random ole = new Random();
+		int nsort = ole.nextInt(5);
+		
+		lblSort.setText("Sugestão: " + listIdeas[nsort]);
+		
+		
+	});
+	
+	ja2.setVisible(true);
+}
+
+
+}
