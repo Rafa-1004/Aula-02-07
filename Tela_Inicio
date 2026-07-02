@@ -34,7 +34,34 @@ public class TelaInicial {
 		btnAvancar = new JButton("Gerar meu plano");
 		btnAvancar.setBounds(40,180,150,30);
 		ja1.add(btnAvancar);
+
+		btnAvancar.addActionListener( e ->{
+			String nome = cN.getText();
+			String dT = cD.getText();
+			
+			if(nome.equals("")||dT.equals("")) {
+				JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+			}else {
+				int tD = Integer.parseInt(dT);
+				int cont = tD;
+				
+				System.out.println("Contagem Regressiva");
+				while(cont > 0) {
+					System.out.println("Faltam " + cont + " dias");
+					cont = cont - 1;
+				}
+							
+				new TelaResults(nome,tD);
+				ja1.dispose();
+			}
+		});
 		
 		ja1.setVisible(true);
+		
 	}
-}
+		
+		public static void main(String[] args) {
+				new TelaInicial();
+			}
+		}
+	
