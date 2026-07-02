@@ -1,0 +1,40 @@
+package aula0207;
+
+import javax.swing.*;
+public class TelaInicial {
+
+	JFrame ja1;
+	JTextField cN;
+	JTextField cD;
+	JButton btnAvancar;
+	
+	public TelaInicial() {
+		ja1 = new JFrame("Configuração de Férias");
+		ja1.setSize(300,200);
+		ja1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ja1.setLayout(null);
+		ja1.setLocationRelativeTo(null);
+		
+		JLabel lblNome = new JLabel("Qual seu nome?");
+		lblNome.setBounds(40,30,200,25);
+		ja1.add(lblNome);
+		
+		cN = new JTextField();
+		cN.setBounds(40,60,300,25);
+		ja1.add(cN);
+		
+		JLabel lblDias = new JLabel ("Quantos dias de férias");
+		lblDias.setBounds(40,100,250,25);
+		ja1.add(lblDias);
+		
+		cD = new JTextField();
+		cD.setBounds(40,130,100,25);
+		ja1.add(cD);
+		
+		btnAvancar = new JButton("Gerar meu plano");
+		btnAvancar.setBounds(40,180,150,30);
+		ja1.add(btnAvancar);
+		
+		ja1.setVisible(true);
+	}
+}
